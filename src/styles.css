@@ -425,6 +425,109 @@ h1 span {
   font-weight: 700;
 }
 
+.projects {
+  inline-size: min(1180px, calc(100% - 2rem));
+  margin: clamp(5rem, 10vw, 9rem) auto;
+  scroll-margin-top: 88px;
+}
+
+.projects-heading {
+  max-inline-size: 780px;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.projects-heading h2 {
+  margin: 1.2rem 0 0;
+  font-size: clamp(2.5rem, 5.6vw, 5.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.project-list {
+  border-bottom: 1px solid var(--line);
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 52px minmax(190px, 0.8fr) minmax(300px, 1.2fr) 42px;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: start;
+  padding: clamp(1.8rem, 3.5vw, 3rem) 0;
+  border-top: 1px solid var(--line);
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.project-card:hover {
+  color: var(--blue-dark);
+  background: var(--blue-pale);
+  box-shadow: 20px 0 0 var(--blue-pale), -20px 0 0 var(--blue-pale);
+}
+
+.project-number,
+.project-role {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-number,
+.project-role,
+.project-name p {
+  color: var(--blue);
+}
+
+.project-name h3 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.1;
+}
+
+.project-name p,
+.project-details p {
+  margin: 0;
+}
+
+.project-name p {
+  font-size: 0.78rem;
+}
+
+.project-details > p:not(.project-role) {
+  margin-top: 0.75rem;
+  color: #526d80;
+  line-height: 1.6;
+}
+
+.project-details ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-details li {
+  padding: 0.38rem 0.6rem;
+  color: var(--blue-dark);
+  background: var(--blue-soft);
+  border-radius: 5px;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.project-arrow {
+  font-size: 1.25rem;
+  transition: transform 180ms ease;
+}
+
+.project-card:hover .project-arrow {
+  transform: translate(3px, -3px);
+}
+
 .experience {
   display: flex;
   gap: clamp(2rem, 5vw, 5rem);
@@ -710,6 +813,10 @@ footer p:last-child {
   .about {
     grid-template-columns: 0.7fr 1fr;
   }
+
+  .project-card {
+    grid-template-columns: 42px minmax(160px, 0.7fr) minmax(240px, 1.3fr) 32px;
+  }
 }
 
 @media (max-inline-size: 680px) {
@@ -725,10 +832,6 @@ footer p:last-child {
 
   nav {
     gap: 0.8rem;
-  }
-
-  nav a:first-child {
-    display: none;
   }
 
   .hero,
@@ -770,6 +873,25 @@ footer p:last-child {
 
   .feature-topline span {
     display: none;
+  }
+
+  .projects {
+    inline-size: calc(100% - 1.25rem);
+    scroll-margin-top: 76px;
+  }
+
+  .project-card {
+    grid-template-columns: 34px 1fr 28px;
+    gap: 0.85rem;
+  }
+
+  .project-details {
+    grid-column: 2 / 4;
+  }
+
+  .project-arrow {
+    grid-column: 3;
+    grid-row: 1;
   }
 
   .timeline {

@@ -53,6 +53,39 @@ const timeline = [
   },
 ];
 
+const projects = [
+  {
+    number: "01",
+    title: "Visa Product Design System",
+    url: "https://design.visa.com/",
+    domain: "design.visa.com",
+    role: "Senior design engineer · Web platforms",
+    description:
+      "A public, accessibility-first design system supporting teams across React, Angular, CSS, and Flutter.",
+    tags: ["Design systems", "Accessibility", "Angular", "React"],
+  },
+  {
+    number: "02",
+    title: "AR Fitness & Nutrition",
+    url: "https://www.arfitnessandnutrition.com/",
+    domain: "arfitnessandnutrition.com",
+    role: "Website design & development",
+    description:
+      "A local fitness and nutrition website that helps people explore coaching, memberships, events, and nutrition services.",
+    tags: ["Small business", "Responsive web", "Content"],
+  },
+  {
+    number: "03",
+    title: "Santa of Texas",
+    url: "https://santaoftexas.com/",
+    domain: "santaoftexas.com",
+    role: "Website design & development",
+    description:
+      "A welcoming small-business site designed to introduce services, share event photography, and make booking Santa simple.",
+    tags: ["WordPress", "HTML / CSS", "JavaScript"],
+  },
+];
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -65,7 +98,7 @@ function App() {
           NB.
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
+          <a href="#projects">Work</a>
           <a href="#about">About</a>
           <a href="mailto:NicoleBerreth@gmail.com">
             Let’s talk <Arrow />
@@ -168,6 +201,47 @@ function App() {
                 </li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        <section
+          className="projects"
+          id="projects"
+          aria-labelledby="projects-heading"
+        >
+          <div className="projects-heading">
+            <p className="kicker">SELECTED PROJECTS</p>
+            <h2 id="projects-heading">Work in the world.</h2>
+          </div>
+          <div className="project-list">
+            {projects.map((project) => (
+              <a
+                className="project-card"
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                key={project.title}
+                aria-label={`Visit ${project.title}`}
+              >
+                <span className="project-number">{project.number}</span>
+                <div className="project-name">
+                  <h3>{project.title}</h3>
+                  <p>{project.domain}</p>
+                </div>
+                <div className="project-details">
+                  <p className="project-role">{project.role}</p>
+                  <p>{project.description}</p>
+                  <ul aria-label={`${project.title} technologies and topics`}>
+                    {project.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                </div>
+                <span className="project-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            ))}
           </div>
         </section>
 
