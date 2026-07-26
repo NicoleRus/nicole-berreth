@@ -15,34 +15,41 @@ const capabilities = [
   },
   {
     number: "03",
-    title: "Developer experience",
+    title: "Agentic systems",
     description:
-      "Documentation, education, tooling, and thoughtful defaults that help product teams ship with confidence.",
-    tags: ["Documentation", "Tooling", "Enablement"],
+      "Reusable AI skills, structured design-system context, and agent-ready patterns that help people and agents work with the system more effectively.",
+    tags: ["AI skills", "Agent-ready docs", "AI integrations"],
   },
 ];
 
 const timeline = [
   {
-    dates: "2021 — NOW",
+    dates: "DEC 2023 — NOW",
+    role: "Senior Design Engineer",
+    company: "Visa",
+    detail:
+      "A trusted technical partner across Visa’s web design-system platforms—making informed decisions, proposing needed work, and building agentic capabilities.",
+  },
+  {
+    dates: "JUL 2021 — MAR 2024",
     role: "Design Engineer",
     company: "Visa",
     detail:
-      "Leading development and maintenance of Nova, Visa’s Angular component library, while shaping shared patterns across Angular and React.",
+      "Maintained accessible React and Angular libraries while creating learning content and supporting product teams across Visa.",
   },
   {
-    dates: "2019 — 2021",
+    dates: "OCT 2019 — JUN 2021",
     role: "Associate Design Engineer",
     company: "Visa",
     detail:
-      "Built accessible, reusable components and supported teams adopting Visa’s frontend libraries.",
+      "Built React and Angular components in close partnership with design, usability research, and accessibility specialists.",
   },
   {
-    dates: "SUMMER 2019",
+    dates: "JUN — AUG 2019",
     role: "UI Engineer Intern",
     company: "Visa",
     detail:
-      "Started the journey from frontend implementation into enterprise-scale design systems.",
+      "Designed accessible web components, improved screen-reader and browser support, and incorporated findings from usability testing.",
   },
 ];
 
@@ -55,7 +62,7 @@ function App() {
     <>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Nicole Berreth, home">
-          NB<span className="wordmark-dot">.</span>
+          NB.
         </a>
         <nav aria-label="Primary navigation">
           <a href="#work">Work</a>
@@ -70,7 +77,7 @@ function App() {
         <section className="hero ruled" id="top">
           <div className="eyebrow">
             <span className="status-dot" aria-hidden="true" />
-            Design engineer · Houston, TX
+            Senior design engineer · Houston, TX
           </div>
           <h1>
             I build the systems
@@ -83,22 +90,23 @@ function App() {
               accessible components, scalable UI architecture, and better
               developer experiences.
             </p>
-            <a className="circle-link" href="#work" aria-label="Explore my work">
+            <a
+              className="circle-link"
+              href="#work"
+              aria-label="Explore my work"
+            >
               <span aria-hidden="true">↓</span>
             </a>
           </div>
-          <div className="measure measure-a" aria-hidden="true">08 PX</div>
-          <div className="measure measure-b" aria-hidden="true">12 COL</div>
         </section>
 
         <section className="intro ruled" id="work">
-          <div className="section-label">What I do</div>
           <div className="section-lead">
             <p className="kicker">DESIGN × ENGINEERING</p>
             <h2>
-              Systems that help teams
+              Making technology work
               <br />
-              do their best work.
+              better for people.
             </h2>
           </div>
         </section>
@@ -119,7 +127,6 @@ function App() {
         </section>
 
         <section className="feature ruled" aria-labelledby="visa-heading">
-          <div className="section-label">Selected experience</div>
           <div className="feature-content">
             <div className="feature-topline">
               <p className="kicker">VISA · 2019 — PRESENT</p>
@@ -132,26 +139,32 @@ function App() {
             </h2>
             <div className="feature-grid">
               <p className="feature-summary">
-                I lead work on Nova, Visa’s Angular component library, and
-                partner across disciplines to make design standards usable,
-                accessible, and scalable.
+                I’m a senior individual contributor trusted with decisions and
+                relationships across Visa’s web design-system platforms. I
+                connect needs across teams, propose work that will improve the
+                system, and help move it forward—while building new agentic and
+                human-focused capabilities.
               </p>
               <ul className="outcomes">
                 <li>
                   <span>01</span>
-                  Cross-framework alignment across Angular and React
+                  Apply technical and product judgment across the HTML/CSS,
+                  React, and Angular platforms
                 </li>
                 <li>
                   <span>02</span>
-                  WCAG-compliant interaction patterns and component APIs
+                  Build trusted relationships with cross-functional partners and
+                  developer teams that surface needs and help work move forward
                 </li>
                 <li>
                   <span>03</span>
-                  AI-ready component architectures and llms.txt standards
+                  Propose and contribute to platform and accessibility
+                  improvements
                 </li>
                 <li>
                   <span>04</span>
-                  Education, support, and tooling for internal product teams
+                  Add reusable skills, structured context, and integrations for
+                  agentic workflows
                 </li>
               </ul>
             </div>
@@ -159,14 +172,16 @@ function App() {
         </section>
 
         <section className="experience ruled" aria-labelledby="journey-heading">
-          <div className="section-label">Experience</div>
           <div className="experience-content">
             <h2 id="journey-heading">A career in the space between.</h2>
             <div className="timeline">
-              {timeline.map((item) => (
-                <article className="timeline-item" key={item.role}>
-                  <p className="timeline-date">{item.dates}</p>
-                  <div>
+              {timeline.map((item, index) => (
+                <article
+                  className={`timeline-item timeline-item-${index + 1}`}
+                  key={item.role}
+                >
+                  <div className="timeline-bubble">
+                    <p className="timeline-date">{item.dates}</p>
                     <h3>{item.role}</h3>
                     <p className="company">{item.company}</p>
                   </div>
@@ -177,14 +192,16 @@ function App() {
           </div>
         </section>
 
-        <section className="about ruled" id="about" aria-labelledby="about-heading">
-          <div className="section-label">About</div>
+        <section
+          className="about ruled"
+          id="about"
+          aria-labelledby="about-heading"
+        >
           <div className="portrait-frame">
             <img
               src={`${import.meta.env.BASE_URL}nicole-berreth.jpg`}
               alt="Nicole Berreth"
             />
-            <span className="portrait-label">FIG. 01 · NICOLE</span>
           </div>
           <div className="about-copy">
             <p className="kicker">DESIGN ENGINEER / LIFELONG LEARNER</p>
@@ -194,10 +211,11 @@ function App() {
               human perspective.
             </h2>
             <p>
-              I’m a design engineer who cares as much about how a system is
-              understood as how it is built. My computer science foundation,
-              accessibility practice, and ongoing MBA help me connect technical
-              decisions to people and organizations.
+              I care about making technology work for people. My computer
+              science background gives me the technical depth to build durable
+              systems; psychology and accessibility keep the human experience at
+              the center. I’m happiest where design and development meet,
+              turning complicated ideas into experiences that feel simple.
             </p>
             <div className="education">
               <p>
@@ -207,14 +225,16 @@ function App() {
               <p>
                 <strong>BS, Computer Science</strong>
                 University of North Texas · 2019
+                <br />
+                Psychology minor · Technical writing certificate
               </p>
             </div>
           </div>
         </section>
 
         <section className="contact-cta">
-          <p className="kicker">HAVE A GOOD PROBLEM?</p>
-          <h2>Let’s make it useful.</h2>
+          <p className="kicker">LET’S CREATE BETTER EXPERIENCES.</p>
+          <h2>Start a conversation.</h2>
           <a href="mailto:NicoleBerreth@gmail.com">
             Start a conversation <Arrow />
           </a>
