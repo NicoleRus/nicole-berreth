@@ -144,7 +144,10 @@ function App() {
           </div>
         </section>
 
-        <section className="capabilities" aria-label="Areas of expertise">
+        <section
+          className="capabilities ruled-inset"
+          aria-label="Areas of expertise"
+        >
           {capabilities.map((capability) => (
             <article className="capability" key={capability.number}>
               <span className="capability-number">{capability.number}</span>
@@ -159,7 +162,7 @@ function App() {
           ))}
         </section>
 
-        <section className="feature ruled" aria-labelledby="visa-heading">
+        <section className="feature ruled-inset" aria-labelledby="visa-heading">
           <div className="feature-content">
             <div className="feature-topline">
               <p className="kicker">VISA · 2019 — PRESENT</p>
@@ -205,7 +208,7 @@ function App() {
         </section>
 
         <section
-          className="projects"
+          className="projects ruled"
           id="projects"
           aria-labelledby="projects-heading"
         >
@@ -267,7 +270,7 @@ function App() {
         </section>
 
         <section
-          className="about ruled"
+          className="about ruled-inset"
           id="about"
           aria-labelledby="about-heading"
         >
