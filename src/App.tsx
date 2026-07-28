@@ -1,3 +1,5 @@
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+
 const capabilities = [
   {
     number: "01",
@@ -97,28 +99,28 @@ function App() {
         <a className="wordmark" href="#top" aria-label="Nicole Berreth, home">
           NB.
         </a>
-        <nav aria-label="Primary navigation">
-          <a href="#projects">Work</a>
-          <a href="#about">About</a>
-          <a href="mailto:NicoleBerreth@gmail.com">
+        <nav className="primary-nav" aria-label="Primary navigation">
+          <a className="nav-link" href="#projects">Work</a>
+          <a className="nav-link" href="#about">About</a>
+          <a className="nav-link nav-cta" href="mailto:NicoleBerreth@gmail.com">
             Let’s talk <Arrow />
           </a>
         </nav>
       </header>
 
-      <main id="main">
+      <main className="site-main" id="main">
         <section className="hero ruled" id="top">
           <div className="eyebrow">
             <span className="status-dot" aria-hidden="true" />
             Senior design engineer · Houston, TX
           </div>
-          <h1>
+          <h1 className="hero-title">
             I build the systems
             <br />
-            <span>behind great interfaces.</span>
+            <span className="hero-title-accent">behind great interfaces.</span>
           </h1>
           <div className="hero-footer">
-            <p>
+            <p className="hero-summary">
               I work between design and engineering to turn standards into
               accessible components, scalable UI architecture, and better
               developer experiences.
@@ -136,7 +138,7 @@ function App() {
         <section className="intro ruled" id="work">
           <div className="section-lead">
             <p className="kicker">DESIGN × ENGINEERING</p>
-            <h2>
+            <h2 className="section-title">
               Making technology work
               <br />
               better for people.
@@ -151,11 +153,11 @@ function App() {
           {capabilities.map((capability) => (
             <article className="capability" key={capability.number}>
               <span className="capability-number">{capability.number}</span>
-              <h3>{capability.title}</h3>
-              <p>{capability.description}</p>
-              <ul aria-label={`${capability.title} topics`}>
+              <h3 className="capability-title">{capability.title}</h3>
+              <p className="capability-description">{capability.description}</p>
+              <ul className="capability-tags" aria-label={`${capability.title} topics`}>
                 {capability.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
+                  <li className="capability-tag" key={tag}>{tag}</li>
                 ))}
               </ul>
             </article>
@@ -168,7 +170,7 @@ function App() {
               <p className="kicker">VISA · 2019 — PRESENT</p>
               <span>HOUSTON / REMOTE</span>
             </div>
-            <h2 id="visa-heading">
+            <h2 className="section-title" id="visa-heading">
               Building a shared language
               <br />
               for enterprise products.
@@ -182,22 +184,22 @@ function App() {
                 human-focused capabilities.
               </p>
               <ul className="outcomes">
-                <li>
+                <li className="outcome">
                   <span>01</span>
                   Apply technical and product judgment across the HTML/CSS,
                   React, and Angular platforms
                 </li>
-                <li>
+                <li className="outcome">
                   <span>02</span>
                   Build trusted relationships with cross-functional partners and
                   developer teams that surface needs and help work move forward
                 </li>
-                <li>
+                <li className="outcome">
                   <span>03</span>
                   Propose and contribute to platform and accessibility
                   improvements
                 </li>
-                <li>
+                <li className="outcome">
                   <span>04</span>
                   Add reusable skills, structured context, and integrations for
                   agentic workflows
@@ -214,7 +216,7 @@ function App() {
         >
           <div className="projects-heading">
             <p className="kicker">SELECTED PROJECTS</p>
-            <h2 id="projects-heading">Work in the world.</h2>
+            <h2 className="section-title" id="projects-heading">Work in the world.</h2>
           </div>
           <div className="project-list">
             {projects.map((project) => (
@@ -228,15 +230,15 @@ function App() {
               >
                 <span className="project-number">{project.number}</span>
                 <div className="project-name">
-                  <h3>{project.title}</h3>
-                  <p>{project.domain}</p>
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-domain">{project.domain}</p>
                 </div>
                 <div className="project-details">
                   <p className="project-role">{project.role}</p>
-                  <p>{project.description}</p>
-                  <ul aria-label={`${project.title} technologies and topics`}>
+                  <p className="project-description">{project.description}</p>
+                  <ul className="project-tags" aria-label={`${project.title} technologies and topics`}>
                     {project.tags.map((tag) => (
-                      <li key={tag}>{tag}</li>
+                      <li className="project-tag" key={tag}>{tag}</li>
                     ))}
                   </ul>
                 </div>
@@ -250,7 +252,7 @@ function App() {
 
         <section className="experience ruled" aria-labelledby="journey-heading">
           <div className="experience-content">
-            <h2 id="journey-heading">A career in the space between.</h2>
+            <h2 className="section-title" id="journey-heading">A career in the space between.</h2>
             <div className="timeline">
               {timeline.map((item, index) => (
                 <article
@@ -259,7 +261,7 @@ function App() {
                 >
                   <div className="timeline-bubble">
                     <p className="timeline-date">{item.dates}</p>
-                    <h3>{item.role}</h3>
+                    <h3 className="timeline-title">{item.role}</h3>
                     <p className="company">{item.company}</p>
                   </div>
                   <p className="timeline-detail">{item.detail}</p>
@@ -278,16 +280,21 @@ function App() {
             <img
               src={`${import.meta.env.BASE_URL}nicole-berreth.jpg`}
               alt="Nicole Berreth"
+              className="portrait-image"
+              width="901"
+              height="1200"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="about-copy">
             <p className="kicker">DESIGN ENGINEER / LIFELONG LEARNER</p>
-            <h2 id="about-heading">
+            <h2 className="section-title" id="about-heading">
               Technical depth,
               <br />
               human perspective.
             </h2>
-            <p>
+            <p className="about-description">
               I care about making technology work for people. My computer
               science background gives me the technical depth to build durable
               systems; psychology and accessibility keep the human experience at
@@ -295,12 +302,12 @@ function App() {
               turning complicated ideas into experiences that feel simple.
             </p>
             <div className="education">
-              <p>
-                <strong>MBA</strong>
+              <p className="education-item">
+                <strong className="education-degree">MBA</strong>
                 University of Houston–Clear Lake · Expected 2028
               </p>
-              <p>
-                <strong>BS, Computer Science</strong>
+              <p className="education-item">
+                <strong className="education-degree">BS, Computer Science</strong>
                 University of North Texas · 2019
                 <br />
                 Psychology minor · Technical writing certificate
@@ -311,32 +318,36 @@ function App() {
 
         <section className="contact-cta">
           <p className="kicker">LET’S CREATE BETTER EXPERIENCES.</p>
-          <h2>Start a conversation.</h2>
-          <a href="mailto:NicoleBerreth@gmail.com">
+          <h2 className="contact-title">Start a conversation.</h2>
+          <a className="contact-link" href="mailto:NicoleBerreth@gmail.com">
             Start a conversation <Arrow />
           </a>
         </section>
       </main>
 
-      <footer>
-        <p>© {new Date().getFullYear()} Nicole Berreth</p>
-        <div>
+      <footer className="site-footer">
+        <p className="footer-copyright">© {new Date().getFullYear()} Nicole Berreth</p>
+        <div className="footer-links">
           <a
+            className="footer-link"
             href="https://www.linkedin.com/in/nicole-berreth/"
             target="_blank"
             rel="noreferrer"
           >
-            LinkedIn <Arrow />
+            <FaLinkedinIn aria-hidden="true" />
+            <span>LinkedIn</span>
           </a>
           <a
+            className="footer-link"
             href="https://github.com/NicoleRus"
             target="_blank"
             rel="noreferrer"
           >
-            GitHub <Arrow />
+            <FaGithub aria-hidden="true" />
+            <span>GitHub</span>
           </a>
         </div>
-        <p>Designed &amp; built with care</p>
+        <p className="footer-note">Designed &amp; built with care</p>
       </footer>
     </>
   );
